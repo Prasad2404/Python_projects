@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+<head>
+  <link rel="stylesheet" href="{%static 'font-awesome-4.7.0\css\font-awesome.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/typicons/typicons.css'%}">
+
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align:center;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+<center><h1>Customer record</h1></center>
+
+<table id="customers">
+  <tr>
+    <th>Id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>dob</th>
+    <th>primary_contact</th>
+    <th>alternate_contact</th>
+    <th>mother_tounge</th>
+    <th>location</th>
+    <th>gender</th>
+    <th>marital_status</th>
+    <th>about_profile</th>
+    <th>main_origin</th>
+    <th>Update</th>
+    <th>Delete</th>
+
+
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{i.id}}</td>
+    <td>{{i.user.first_name}}</td>
+    <td>{{i.user.last_name}}</td>
+    <td>{{i.user.email}}</td>
+    <td>{{i.dob}}</td>
+    <td>{{i.primary_contact}}</td>
+    <td>{{i.alternate_contact}}</td>
+    <td>{{i.mother_tounge}}</td>
+    <td>{{i.location}}</td>
+    <td>{{i.gender}}</td>
+    <td>{{i.marital_status}}</td>
+    <td>{{i.about_profile}}</td>
+    <td>{{i.main_origin}}</td>
+    <td><a href="update/{{i.id}}"><i class="fa fa-pencil-square fa-2x" aria-hidden="true">Update</i></a></td>
+    <td><a href="delete/{{i.id}}"><i class="fa fa-trash-o  fa-2x">Delete</a></td>
+  </tr>
+ {%endfor%}
+</table>
+
+</body>
+</html>
