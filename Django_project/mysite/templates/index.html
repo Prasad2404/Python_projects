@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+        <h2>Django Framewok</h2>
+    <!--
+        <form action="addition" method="post">
+
+            {% csrf_token %}
+
+            <input type="text" name="num1" placeholder="number1"><br><br>
+            <input type="text" name="num2" placeholder="number2"><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    -->
+        <form action="registration" method="post">
+
+            {% csrf_token %}
+
+            <input type="text" name="fname" placeholder="First name"><br><br>
+            <input type="text" name="lname" placeholder="Last name"><br><br>
+            <input type="text" name="email" placeholder="Emai id"><br><br>
+            <input type="text" name="password" placeholder="Password"><br><br>
+
+
+            <button type="submit">Submit</button>
+        </form>
+</body>
+</html>
